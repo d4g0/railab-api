@@ -5,14 +5,19 @@ import MailRouter from './MailRouter'
 // import { MailMiddleWare } from './middleware.js'
 //Routes
 
+// MAIL 2
+router.use('/mail2', MailRouter);
+
 
 // BASE
 router.route('/')
-    .get((req, res, next) => { res.end("Api Up n Runing") }) // base
+    .get((req, res, next) => { res.end("Api Up n Runing") }); // base
 
 
-// MAIL 2
-router.use('/mail2',MailRouter)
+router.use("*", (req, res) => res.status(404).json({ errorApiRouter: `route -> ${req.originalUrl} ` + " not found" }))
+
+
+
 
 
 export default router

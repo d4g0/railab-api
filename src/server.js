@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Routes
 app.use("/api", router)
 
-app.use("*", (req, res) => res.status(404).json({ error: `route -> ${req.originalUrl} ` + " not found" }))
+app.use("*", (req, res) => res.status(404).json({ errorServer: `route -> ${req.originalUrl} ` + " not found" }))
 
 
 export default app
