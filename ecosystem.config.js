@@ -6,7 +6,8 @@ module.exports = {
             instances: 'max',
             script: './index.js',
             env_production: {
-                "NODE_ENV": "production"
+                "NODE_ENV": "production",
+                "PORT": 3010
             }
         }
     ]
