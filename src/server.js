@@ -11,12 +11,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Routes
-app.use("/", router)
+app.use("/api", router)
 
-// app.use("/api/v1/movies", movies)
-// app.use("/api/v1/user", users)
-// app.use("/status", express.static("build"))
-// app.get('/', (req, res) => res.end('up and runing..'))
 app.use("*", (req, res) => res.status(404).json({ error: "not found" }))
+
 
 export default app
