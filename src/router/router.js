@@ -7,7 +7,7 @@ const router = express.Router()
 
 
 // BASE
-router.route('/')
+router.route('/api')
     .get((req, res, next) => { res.end("Api Up n Runing") }) // test
 
 
