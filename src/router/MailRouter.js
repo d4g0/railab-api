@@ -13,6 +13,9 @@ router.route('/')
         // MailMiddleWare.routerlyFilters,
         // MailMiddleWare.isAcceptable,
         MailCtrl.sendMail2)
+    .get(
+        (req, res) => res.status(200).json({ 'MailRouter [get][/mail2] ': `route hit in -> ${req.originalUrl} ` })
+    )
 
 
 
