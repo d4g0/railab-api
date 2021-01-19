@@ -1,4 +1,4 @@
-import { jsonReplay } from './_helpers.js'
+import { jsonReplay } from '~/utils'
 import MailService from '~/services/MailService'
 export default class MailCtrl {
     /**
@@ -27,30 +27,9 @@ export default class MailCtrl {
      * @param {object} next
      */
     static async sendMail(req, res, next) {
-
-        const { sender, msg } = req.body.data
-        const replay = await MailService.sendMail2(sender, msg)
-
-
-        if (replay.error) {
-            return (
-                res.status(200).json(jsonReplay(replay.error, "FAIL", null))
-            )
-
-        } else {
-
-            return (
-                res.status(200).json(jsonReplay(null, "OK", replay.payload))
-            )
-
-        }
-    }
-
-    static async sendMail2(req, res, next) {
-        const { sender, msg } = req.body.data
-        // const { sender, msg } = data
-        // console.log({ sender, msg } )
-        const replay = await MailService.sendMail2(sender, msg)
+        const { sender, message } = req.body.data
+       
+        const replay = await MailService.sendMail2(sender, message)
 
         if (replay.error) {
             return (

@@ -1,4 +1,4 @@
-import { jsonReplay } from './_helpers.js'
+import { jsonReplay } from '~/src/middleware/_helpers.js'
 import MailService from '../services/MailService.js'
 export default class MailCtrl {
     /**

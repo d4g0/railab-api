@@ -1,6 +1,6 @@
 import validator from 'validator'
 import xssFilters from 'xss-filters'
-import { jsonReplay } from './controllers/_helpers.js'
+import { jsonReplay } from '../src/middleware/_helpers.js'
 
 export class MailMiddleWare {
 
