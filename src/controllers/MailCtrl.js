@@ -1,5 +1,7 @@
 import { jsonReplay } from '~/utils'
 import MailService from '~/services/MailService'
+// import { delay } from '~/utils'
+
 export default class MailCtrl {
     /**
      * Atemps to send a email with the suplied 
@@ -28,7 +30,9 @@ export default class MailCtrl {
      */
     static async sendMail(req, res, next) {
         const { sender, message } = req.body.data
-       
+
+        // await delay(11)
+
         const replay = await MailService.sendMail2(sender, message)
 
         if (replay.error) {
